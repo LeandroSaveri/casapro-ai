@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useProjectStore } from '/store/projectStore';
+import { useProjectStore } from './store/projectStore';
 import { Send, Sparkles, Wand2, Palette, Layout, Lightbulb, Check, X } from 'lucide-react';
 
 const AIAssistant: React.FC = () => {
