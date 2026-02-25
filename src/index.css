@@ -1,3 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Variáveis base para tema premium */
+:root {
+  --background: 222 47% 11%;
+  --foreground: 210 40% 98%;
+  --primary: 45 93% 47%;
+  --primary-foreground: 222 47% 11%;
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+  --accent: 45 93% 47%;
+  --accent-foreground: 222 47% 11%;
+  --card: 222 47% 11%;
+  --card-foreground: 210 40% 98%;
+  --border: 217 33% 17%;
+  --input: 217 33% 17%;
+  --ring: 45 93% 47%;
+  --radius: 0.75rem;
+}
+
 body {
-  background: yellow;
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
 }
