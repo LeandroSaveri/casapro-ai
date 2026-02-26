@@ -291,10 +291,19 @@ ${options.includeMeasurements ? 'Medições incluídas' : ''}
   }
 
   private loadFromLocal(projectId: string): Project | null {
-    const key = `casapro_project_${projectId}`;
-    const data = localStorage.getItem(key);
-    return data ? JSON.parse(data) : null;
-  }
+  const key = `casapro_project_${projectId}`;
+  const data = localStorage.getItem(key);
+
+  if (!data) return null;
+
+  const parsed = JSON.parse(data);
+
+  return {
+    ...parsed,
+    createdAt: new Date(parsed.createdAt),
+    updatedAt: new Date(parsed.updatedAt),
+  };
+}
 
   private deleteFromLocal(projectId: string): void {
     const key = `casapro_project_${projectId}`;
