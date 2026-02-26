@@ -79,11 +79,23 @@ class AuthService {
     // Check for stored session
     const storedToken = localStorage.getItem('casapro_token');
     const storedUser = localStorage.getItem('casapro_user');
-    if (storedToken && storedUser) {
-      this.token = storedToken;
-      this.currentUser = JSON.parse(storedUser);
-    }
+    constructor() {
+  const storedToken = localStorage.getItem('casapro_token');
+  const storedUser = localStorage.getItem('casapro_user');
+
+  if (storedToken && storedUser) {
+    this.token = storedToken;
+
+    const parsedUser = JSON.parse(storedUser);
+
+    this.currentUser = {
+      ...parsedUser,
+      createdAt: new Date(parsedUser.createdAt),
+      lastLoginAt: new Date(parsedUser.lastLoginAt),
+      lastLogin: new Date(parsedUser.lastLogin),
+    };
   }
+}
 
   async login(credentials: AuthCredentials): Promise<AuthResponse> {
     await delay(800); // Simulate network delay
