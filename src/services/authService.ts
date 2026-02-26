@@ -79,9 +79,6 @@ class AuthService {
     // Check for stored session
     const storedToken = localStorage.getItem('casapro_token');
     const storedUser = localStorage.getItem('casapro_user');
-    constructor() {
-  const storedToken = localStorage.getItem('casapro_token');
-  const storedUser = localStorage.getItem('casapro_user');
 
   if (storedToken && storedUser) {
     this.token = storedToken;
