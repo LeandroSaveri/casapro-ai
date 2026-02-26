@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useProjectStore } from '@/store/projectStore';
 import { useUIStore } from '@/store/uiStore';
 import type { Point, Wall, Room } from '@/types';
-import { Ruler, Grid3X3, Magnet } from 'lucide-react';
+import { Ruler, Grid3x3, Magnet } from 'lucide-react';
 
 // Snap angles configuration
 const SNAP_ANGLES = [0, 45, 90, 135, 180, 225, 270, 315];
@@ -854,7 +854,7 @@ const Canvas2D: React.FC = () => {
       {/* Scale Indicator */}
       <div className="absolute bottom-6 right-6 px-3 py-2 bg-[#1a1a1f]/90 backdrop-blur-xl border border-white/10 rounded-lg">
         <div className="flex items-center gap-2 text-xs text-white/60">
-          <Grid3X3 size={14} />
+          <Grid3x3 size={14} />
           <span>{currentProject?.settings.gridSize || 0.5}m grid</span>
           <span className="text-white/30">|</span>
           <span>{currentProject?.settings.unit === 'meters' ? 'Metros' : 'Pés'}</span>
