@@ -238,7 +238,7 @@ export const useUIStore = create<UIStateExtended>()(
       
       clearNotifications: () => set({ notifications: [] }),
       
-         toggleSetting: (key) =>
+             toggleSetting: (key) =>
         set((state) => ({
           [key]: !(state as any)[key],
         })),
