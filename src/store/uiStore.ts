@@ -238,10 +238,11 @@ export const useUIStore = create<UIStateExtended>()(
       
       clearNotifications: () => set({ notifications: [] }),
       
-     toggleSetting: (key) =>
-  set((state) => ({
-    [key]: !(state as any)[key],
-  })),
+         toggleSetting: (key) =>
+        set((state) => ({
+          [key]: !(state as any)[key],
+        })),
+    }),
     {
       name: 'casapro-ui',
       partialize: (state) => ({
